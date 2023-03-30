@@ -1,12 +1,14 @@
 package com.api.cep.model.dto;
 
+import lombok.Data;
+
 /**
  * @since 29/03/2023
  * @author Gilmar Junior
  * @version 1.0
  *
  */
-
+@Data
 public class EnderecoViaCepDTO {
 
 	private String cep;
@@ -18,7 +20,7 @@ public class EnderecoViaCepDTO {
 
 	/*
 	 * construtores
-	 */
+	 
 	public EnderecoViaCepDTO() {
 	}
 
@@ -31,11 +33,11 @@ public class EnderecoViaCepDTO {
 		this.bairro = bairro;
 		this.localidade = localidade;
 		this.uf = uf;
-	}
+	}*/
 
 	/*
 	 * Metodos getters and setters
-	 */
+	 
 
 	public String getCep() {
 		return cep;
@@ -83,5 +85,5 @@ public class EnderecoViaCepDTO {
 
 	public void setUf(String uf) {
 		this.uf = uf;
-	}
+	}*/
 }// fim da classe
