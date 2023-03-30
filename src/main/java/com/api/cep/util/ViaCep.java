@@ -19,10 +19,10 @@ public class ViaCep {
 	@Value("https://viacep.com.br/ws/")
 	private String url;
 
-    public EnderecoViaCepDTO getEndereco(String cep) {
-        RestTemplate restTemplate = new RestTemplate();
-        String endpoint = url + cep + "/json";
-        EnderecoViaCepDTO endereco = restTemplate.getForObject(endpoint, EnderecoViaCepDTO.class);
-        return endereco;
-    }
+	public EnderecoViaCepDTO getEndereco(String cep) {
+		RestTemplate restTemplate = new RestTemplate();
+		String endpoint = url + cep + "/json";
+		EnderecoViaCepDTO endereco = restTemplate.getForObject(endpoint, EnderecoViaCepDTO.class);
+		return endereco;
+	}
 }

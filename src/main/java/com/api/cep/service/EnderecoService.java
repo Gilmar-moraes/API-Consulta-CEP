@@ -11,9 +11,9 @@ import com.api.cep.model.dto.EnderecoViaCepDTO;
 import com.api.cep.util.ViaCep;
 
 /**
- * @since 29/03/2023
+ * @since 30/03/2023
  * @author Gilmar Junior
- * @version 1.0
+ * @version 1.0.1
  *
  */
 
@@ -23,6 +23,11 @@ public class EnderecoService {
 	@Autowired
 	private ViaCep viaCep;
 
+	/**
+	 * 
+	 * @param cep
+	 * @return
+	 */
 	public EnderecoModel buscarCep(String cep) {
 		if (cep.length() > 8 || cep.length() < 8) {
 
@@ -45,21 +50,48 @@ public class EnderecoService {
 		}
 	}
 
-	public double calcularFrete(String UF) {
-		if ((UF.equals("BA")) || (UF.equals("SE")) || (UF.equals("AL")) || (UF.equals("PB")) || (UF.equals("PE"))
-				|| (UF.equals("RN")) || (UF.equals("MA")) || (UF.equals("CE")) || (UF.equals("PI"))) {
-			return 15.98;
-		} else if ((UF.equals("PA")) || (UF.equals("AP")) || (UF.equals("AM")) || (UF.equals("RR")) || (UF.equals("AC"))
-				|| (UF.equals("RO")) || (UF.equals("TO"))) {
-			return 20.83;
-		} else if ((UF.equals("DF")) || (UF.equals("GO")) || (UF.equals("MT")) || (UF.equals("MS"))) {
-			return 12.50;
-		} else if ((UF.equals("ES")) || (UF.equals("SP")) || (UF.equals("RJ")) || (UF.equals("MG"))) {
+	/**
+	 * 
+	 * @param UF
+	 * @return o valor do frete
+	 */
+
+	private double calcularFrete(String uf) {
+		switch (uf.toUpperCase()) {
+		case "SP":
+		case "RJ":
+		case "MG":
+		case "ES":
 			return 7.85;
-		} else if ((UF.equals("PR")) || (UF.equals("SC")) || (UF.equals("RS"))) {
+		case "DF":
+		case "GO":
+		case "MT":
+		case "MS":
+			return 12.50;
+		case "AL":
+		case "BA":
+		case "CE":
+		case "MA":
+		case "PB":
+		case "PE":
+		case "PI":
+		case "RN":
+		case "SE":
+			return 15.98;
+		case "PR":
+		case "RS":
+		case "SC":
 			return 17.30;
-		} else {
-			return -1;
+		case "AC":
+		case "AM":
+		case "AP":
+		case "PA":
+		case "RO":
+		case "RR":
+		case "TO":
+			return 20.83;
+		default:
+			return 0;
 		}
 	}
 }

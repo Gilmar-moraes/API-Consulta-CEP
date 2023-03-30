@@ -5,11 +5,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @since 29/03/2023
+ * @since 30/03/2023
  * @author Gilmar Junior
- * @version 1.0
+ * @version 1.0.1
  *
  */
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -22,7 +23,6 @@ public class EnderecoModel {
 	private String localidade;
 	private String uf;
 	private double frete;
-
 
 	public EnderecoModel(String cep, String logradouro, String complemento, String bairro, String localidade,
 			String uf) {
