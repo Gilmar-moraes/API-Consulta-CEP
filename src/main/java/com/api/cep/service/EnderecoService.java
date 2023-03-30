@@ -1,5 +1,7 @@
 package com.api.cep.service;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +24,14 @@ public class EnderecoService {
 	private ViaCep viaCep;
 
 	public EnderecoModel buscarCep(String cep) {
-		if (cep.length()>8 || cep.length()<8 || viaCep.getEndereco(cep) == null) {
-			throw new NegocioException("CEP não encontrado");
+		if (cep.length() > 8 || cep.length() < 8) {
+
+			throw new NegocioException("CEP não encontrado, CEP faltando numeros");
+
+		} else if ((Objects.isNull(cep) || cep.isEmpty() || cep.isBlank())) {
+
+			throw new NegocioException("O cep informado não pode ser nulo ou vazio");
+
 		} else {
 			EnderecoViaCepDTO cepRetorno = viaCep.getEndereco(cep);
 
