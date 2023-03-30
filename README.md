@@ -6,6 +6,7 @@ Este é um projeto de API que permite consultar informações de endereço e cal
 * Java ``versão 11``
 * Spring boot ``versão 3.0.5``
 * Spring Web ``versão 3.0.5``
+* API REST Template ``versão 5.0``
 * Lombok ``versão 1.18.26``
 * Springdoc OpenAPI ``versão 2.0.0``
 * Swagger ``versão 4.18.1``
