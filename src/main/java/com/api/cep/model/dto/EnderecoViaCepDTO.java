@@ -1,14 +1,18 @@
 package com.api.cep.model.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
- * @since 30/03/2023
+ * @since 07/04/2023
  * @author Gilmar Junior
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class EnderecoViaCepDTO {
 
 	private String cep;
