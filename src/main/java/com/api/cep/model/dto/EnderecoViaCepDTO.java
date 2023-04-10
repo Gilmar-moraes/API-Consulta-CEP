@@ -1,5 +1,7 @@
 package com.api.cep.model.dto;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,8 +15,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class EnderecoViaCepDTO {
+public class EnderecoViaCepDTO implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String cep;
 	private String logradouro;
 	private String complemento;
