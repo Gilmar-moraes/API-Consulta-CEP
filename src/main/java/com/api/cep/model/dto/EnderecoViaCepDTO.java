@@ -1,16 +1,24 @@
 package com.api.cep.model.dto;
 
-import lombok.Data;
+import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
- * @since 30/03/2023
+ * @since 07/04/2023
  * @author Gilmar Junior
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
-@Data
-public class EnderecoViaCepDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class EnderecoViaCepDTO implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String cep;
 	private String logradouro;
 	private String complemento;
